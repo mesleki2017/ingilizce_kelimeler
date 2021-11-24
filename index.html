@@ -47,13 +47,14 @@ main {
 
 <main>
     <p>Heard: <span class="heard-output">none</span></p>
+    <p>liste: <span class="listede">none</span></p>
 </main>
 
 
 
 <script>
 
-
+var colors = [ "MAVI","KIRMIZI"];
 
 //Set speech recognition
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -75,6 +76,8 @@ recognition.addEventListener('result', e => {
 
     //Output transcript
     heardOutput.textContent = transcript;
+
+    if (colors.includes(transcript)) {listede.textContent ="var";}else{listede.textContent ="yok";}
 
 });
 
