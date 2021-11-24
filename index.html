@@ -60,6 +60,7 @@ var colors = [ "MAVI","KIRMIZI"];
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition(),
+      listede = document.querySelector('.listede'),
       heardOutput = document.querySelector('.heard-output');
 
 
@@ -78,7 +79,7 @@ recognition.addEventListener('result', e => {
     heardOutput.textContent = transcript;
 
     if (colors.includes(transcript)) {listede.textContent ="var";}else{listede.textContent ="yok";}
-
+    
 });
 
 //Restart speech recognition after user has finished talking
