@@ -37,7 +37,7 @@ main {
 	font-size: 10em;
 }
 .listede {
-    color: #15ff00;
+    color: #001aff;
 	font-size: 10em;
 }
 
@@ -46,12 +46,12 @@ main {
 
 </style>
 <header>
-    <h1>Say a Filter</h1>
+    <h1>bir şey söyle</h1>
 </header>
 
 <main>
-    <p>Heard: <span class="heard-output">none</span></p>
-    <p>liste: <span class="listede">none</span></p>
+    <div>duyulan: <span class="heard-output">none</span></div>
+    <div>liste: <span class="listede">none</span></div>
 </main>
 
 
@@ -76,14 +76,14 @@ recognition.start();
 recognition.addEventListener('result', e => {
 
     //Get transcript of user speech
-    let transcript = e.results[0][0].transcript.toLowerCase();
+    var transcript = e.results[0][0].transcript.toLowerCase();
 
 
     //Output transcript
     heardOutput.textContent = transcript;
     //listede1.textContent =transcript;
-
-    if (transcrip == "mavi") {listede1.textContent ="var";}else{listede1.textContent ="yok";}
+    
+    if (transcript == "mavi") {listede1.textContent ="var";}else{listede1.textContent ="yok";}
     
 });
 
