@@ -16,7 +16,7 @@ body {
     color: #fff;
     background-color: #222;
     text-align: center;
-    text-transform: uppercase;
+    
     text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);
 }
 
@@ -37,7 +37,7 @@ main {
 	font-size: 10em;
 }
 .listede {
-    color: #001aff;
+    color: #00ff22;
 	font-size: 10em;
 }
 
@@ -46,7 +46,7 @@ main {
 
 </style>
 <header>
-    <h1>bir şey söyle</h1>
+    <h1 class="baslik">Bir Renk Söyle</h1>
 </header>
 
 <main>
@@ -66,6 +66,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 const recognition = new SpeechRecognition(),
       listede1 = document.querySelector('.listede'),
       heardOutput = document.querySelector('.heard-output');
+      baslik1 = document.querySelector('.baslik');
 
 
 
@@ -83,7 +84,7 @@ recognition.addEventListener('result', e => {
     heardOutput.textContent = transcript;
     //listede1.textContent =transcript;
     
-    if (transcript == "mavi") {listede1.textContent ="var";}else{listede1.textContent ="yok";}
+    if (transcript == "mavi") {baslik1.style.backgroundColor ="#001aff";}else{listede1.textContent ="yok";}
     
 });
 
