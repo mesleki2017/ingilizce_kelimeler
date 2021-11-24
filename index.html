@@ -60,7 +60,7 @@ var colors = [ "MAVI","KIRMIZI"];
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition(),
-      listede = document.querySelector('.listede'),
+      listede1 = document.querySelector('.listede'),
       heardOutput = document.querySelector('.heard-output');
 
 
@@ -78,7 +78,7 @@ recognition.addEventListener('result', e => {
     //Output transcript
     heardOutput.textContent = transcript;
 
-    if (colors.includes(transcript)) {listede.textContent ="var";}else{listede.textContent ="yok";}
+    if (colors.includes(transcript)) {listede1.textContent ="var";}else{listede1.textContent ="yok";}
     
 });
 
