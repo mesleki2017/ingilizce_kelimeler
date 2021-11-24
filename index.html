@@ -37,7 +37,7 @@ main {
 	font-size: 10em;
 }
 .listede {
-    color: #00ff2a;
+    color: #ff000d;
 	font-size: 10em;
 }
 
@@ -76,7 +76,7 @@ recognition.start();
 recognition.addEventListener('result', e => {
 
     //Get transcript of user speech
-    let transcript = e.results[0][0].transcript.toLowerCase().replace(/\s/g, '');
+    let transcript = e.results[0][0];
 
 
     //Output transcript
