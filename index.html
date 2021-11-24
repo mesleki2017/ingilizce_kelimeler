@@ -33,7 +33,8 @@ main {
 }
 
 .heard-output {
-    color: #ffd700;;
+    color: #ffd700;
+	font-size: 4em;
 }
 
 
@@ -71,12 +72,6 @@ recognition.addEventListener('result', e => {
     //Get transcript of user speech
     let transcript = e.results[0][0].transcript.toLowerCase().replace(/\s/g, '');
 
-    //Correct filter spelling/grammar
-    if (transcript === 'greyscale') {
-        transcript = 'grayscale';
-    } else if (transcript === 'huerotate') {
-        transcript = "hue-rotate";
-    }
 
     //Output transcript
     heardOutput.textContent = transcript;
