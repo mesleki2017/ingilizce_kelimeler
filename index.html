@@ -54,7 +54,7 @@ main {
 
 <script>
 
-var colors = [ "MAVI","KIRMIZI"];
+var colors = ["MAVI","KIRMIZI"];
 
 //Set speech recognition
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -78,7 +78,7 @@ recognition.addEventListener('result', e => {
     //Output transcript
     heardOutput.textContent = transcript;
 
-    if (colors.includes(transcript)) {listede1.textContent ="var";}else{listede1.textContent ="yok";}
+    if (transcrip== "KIRMIZI") {listede1.textContent ="var";}else{listede1.textContent ="yok";}
     
 });
 
