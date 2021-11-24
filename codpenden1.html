@@ -1,0 +1,190 @@
+<style>
+:root {
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: #fff;
+    background-color: #222;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 700;
+    padding: 0.7em;
+}
+
+main {
+    flex: 1 0 25em;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #333;
+    padding: 0 2em;
+}
+
+.filter-list-item {
+    font-size: 2em;
+    color: #eee;
+    padding: 1.2em 1em;
+    transition: color 400ms;
+}
+
+.filter-image {
+    height: 100%;
+    background: url(https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1920&h=1080&fit=crop&crop=bottom) no-repeat center;
+    background-size: cover;
+    box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.3) inset,
+                0 -0.2em 0.4em rgba(0, 0, 0, 0.3) inset;
+}
+
+.filter-list-item.current,
+.heard-output {
+    color: #ffd700;;
+}
+
+footer {
+    font-size: 2.4em;
+    padding: 0.9em;
+}
+
+
+</style>
+<header>
+    <h1>Say a Filter</h1>
+    <ul class="filter-list">
+        <li class="filter-list-item current">none</li>
+        <li class="filter-list-item">blur</li>
+        <li class="filter-list-item">brightness</li>
+        <li class="filter-list-item">contrast</li>
+        <li class="filter-list-item">grayscale</li>
+        <li class="filter-list-item">hue-rotate</li>
+        <li class="filter-list-item">invert</li>
+        <li class="filter-list-item">opacity</li>
+        <li class="filter-list-item">saturate</li>
+        <li class="filter-list-item">sepia</li>
+    </ul>
+</header>
+
+<main>
+    <div class="filter-image"></div>
+</main>
+
+<footer>
+    <p>Heard: <span class="heard-output">none</span></p>
+</footer>
+
+<script>
+
+    //DOM load event
+window.addEventListener("DOMContentLoaded",	() => {
+
+//Set speech recognition
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition(),
+      heardOutput = document.querySelector('.heard-output'),
+      filterImage = document.querySelector('.filter-image'),
+      filtersList = document.querySelector('.filter-list'),
+      filters = ['none', 'blur', 'brightness', 'contrast', 'grayscale', 'hue-rotate', 'invert', 'opacity', 'saturate', 'sepia'];
+let filterValue = '',
+    filterListIndex = 0,
+    prevFilterListIndex = 0;
+
+//Start speech recognition
+recognition.start();
+
+//Listen for when the user finishes talking
+recognition.addEventListener('result', e => {
+
+    //Get transcript of user speech
+    let transcript = e.results[0][0].transcript.toLowerCase().replace(/\s/g, '');
+
+    //Correct filter spelling/grammar
+    if (transcript === 'greyscale') {
+        transcript = 'grayscale';
+    } else if (transcript === 'huerotate') {
+        transcript = "hue-rotate";
+    }
+
+    //Output transcript
+    heardOutput.textContent = transcript;
+
+    //Check if transcript is valid filter
+    if (filters.includes(transcript)) {
+
+        //Get filter value
+        switch(transcript) {
+            case 'blur':
+                filterValue = 'blur(5px)';
+                break;
+            case 'brightness':
+                filterValue = 'brightness(1.5)';
+                break;
+            case 'contrast':
+                filterValue = 'contrast(1.5)';
+                break;
+            case 'grayscale':
+                filterValue = 'grayscale(1)';
+                break;
+            case 'hue-rotate':
+                filterValue = 'hue-rotate(90deg)';
+                break;
+            case 'invert':
+                filterValue = 'invert(1)';
+                break;
+            case 'opacity':
+                filterValue = 'opacity(0.6)';
+                break;
+            case 'saturate':
+                filterValue = 'saturate(3)';
+                break;
+            case 'sepia':
+                filterValue = 'sepia(1)';
+                break;
+            default:
+                filterValue = 'none';
+                break;
+        }
+
+        //Apply image filter
+        filterImage.style.filter = filterValue;
+
+        //Get filter list index
+        filterListIndex = filters.indexOf(transcript);
+
+        //Highlight current filter in list
+        if(filterListIndex !== prevFilterListIndex) {
+
+            filtersList.children[prevFilterListIndex].classList.remove('current');
+
+            filtersList.children[filterListIndex].classList.add('current');
+
+            prevFilterListIndex = filterListIndex;
+
+        }
+    }
+});
+
+//Restart speech recognition after user has finished talking
+recognition.addEventListener('end', recognition.start);
+
+});
+</script>
