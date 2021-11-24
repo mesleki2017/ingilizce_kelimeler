@@ -1,98 +1,357 @@
 <style>
 :root {
-    font-size: 10px;
+	/* Base font size */
+	font-size: 10px;
 }
 
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-    font-family: "Lato", Arial, sans-serif;
-    font-weight: 400;
-    height: 100vh;
-    color: #fff;
-    background-color: #222;
-    text-align: center;
-    text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);
+	min-height: 100vh;
+	background-color: #fafafa;
 }
 
-h1 {
-    font-size: 6em;
-    font-weight: 700;
-    padding: 0.7em;
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
 }
 
-main {
-    flex: 1 0 25em;
-    background-color: #fff;
-    overflow: hidden;
+.heading {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0;
+	color: #1a1a1a;
 }
 
-.heard-output {
-    color: #0400ff;
-	font-size: 10em;
+.heading span {
+	display: block;
 }
 
-.renkkutu {
-    flex: 1 0 10rem;
-    height: 30%;
-    
-    background-color: rgb(15, 9, 9);
-    margin: 1rem;
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
 }
 
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+	border: 1px solid #CCC;
+
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+	color: blue;
+	text-align: center;
+	font-size:500%;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+img {height: auto; max-height: 100px;}
 </style>
-<header>
-    <h1 class="baslik">Bir Renk Söyle</h1>
-</header>
 
-<main>
-    <div>duyulan: <span class="heard-output">none</span></div>
-    <div class="renkkutu"></div>
-</main>
+<div class="container">
 
+	<h1 class="heading">İngilizce Kelimler</h1>
 
+	<div class="gallery">
+
+		<div class="gallery-item">
+			<A  id="1" class="gallery-image" HREF="" target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+
+		<div class="gallery-item">
+			<A  id="2" class="gallery-image" HREF=""  target="_blank" >
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="3" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="4" class="gallery-image" HREF=""  target="_blank" >
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="5" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			cxxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="6" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="7" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="8" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="9" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="10" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="11" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="12" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="13" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="14" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="15" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="16" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="17" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="18" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="19" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			xxxxxxx</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="20" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="21" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="22" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="23" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="24" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="25" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="26" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="27" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="28" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="29" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="30" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="31" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="32" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="33" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>	
+		<div class="gallery-item">
+			<A  id="34" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="35" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="36" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="37" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="38" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="39" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>	
+		<div class="gallery-item">
+			<A  id="40" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="41" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="42" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="43" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="44" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="45" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>	
+		<div class="gallery-item">
+			<A  id="46" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="47" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="48" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="49" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="50" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>
+		<div class="gallery-item">
+			<A  id="51" class="gallery-image" HREF=""  target="_blank">
+			<img  src="">
+			</A>
+		</div>				
+				
+				
+				
+
+	</div>
+
+</div>
 
 <script>
-
-
-//Set speech recognition
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-const recognition = new SpeechRecognition(),
-      heardOutput = document.querySelector('.heard-output'),
-      renkkutu1 = document.querySelector('.renkkutu');
-
-
-
-//Start speech recognition
-recognition.start();
-
-//Listen for when the user finishes talking
-recognition.addEventListener('result', e => {
-
-    //Get transcript of user speech
-    var transcript = e.results[0][0].transcript.toLowerCase();
-
-
-    //Output transcript
-    heardOutput.textContent = transcript;
-    //listede1.textContent =transcript;
-    
-    if (transcript == "mavi") {renkkutu1.style.backgroundColor ="#001aff";}
-    if (transcript == "kırmızı") {renkkutu1.style.backgroundColor ="#ff0000";}
-    if (transcript == "turuncu") {renkkutu1.style.backgroundColor ="#ffbb00";}
-    if (transcript == "yeşil") {renkkutu1.style.backgroundColor ="#00b159";}
-    if (transcript == "sarı") {renkkutu1.style.backgroundColor ="##ffc425";}
-    
-});
-
-//Restart speech recognition after user has finished talking
-recognition.addEventListener('end', recognition.start);
-
-
+	const google="https://translate.google.com/?hl=tr&sl=en&tl=tr&text="
+	var k1=["account","aggregate","caveat","comprehensive","concise","deceptive","depiction",
+	"fraudulent","galloping","implicit","lenient","merge","mutable","mutual consent","soar",
+	"Tear down","tenured","main clusters","stratified sampling based on the income category",
+	"Demand has been tremendous","Volume is the number of shares of a security traded during a given period of time","each stratum should be large enough","it is more prone",
+	"leisure industry","scramble to find","shoplifter","surging demand","the survey results would be significantly biased","unemployment aid","mimicking"
+	]
+	k1.forEach(function (value, i) {
+		console.log(i,value)
+	document.getElementById(i+1).innerHTML= value;
+	document.getElementById(i+1).href = google+value;
+	document.getElementById(i+1).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
+	});
 </script>
