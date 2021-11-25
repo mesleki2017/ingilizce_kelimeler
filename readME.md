@@ -4,6 +4,3 @@
 
 
 	
-data = '[{"name" : "Harry", "age" : "32"}]';
-
-[{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}]
