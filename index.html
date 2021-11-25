@@ -78,16 +78,13 @@ img {height: auto; max-height: 100px;}
 	<div class="gallery">
 
 		<div class="gallery-item">
-			<A  id="i1" class="gallery-image" HREF="" target="_blank">google image</A>
-			
-			<A  id="i2" class="gallery-image" HREF="" target="_blank">google image</A>
-			
+			<span><A  id="ff1"  HREF="" target="_blank">google image link</A></span>
+			<A  id="1" class="gallery-image" HREF="" target="_blank"></A>	
 		</div>
 
 		<div class="gallery-item">
-			<A  id="2" class="gallery-image" HREF=""  target="_blank" >
-			<img  src="">
-			xxxxxxx</A>
+			<span><A  id="ff2"  HREF="" target="_blank">google image link</A></span>
+			<A  id="2" class="gallery-image" HREF=""  target="_blank" ></A>
 		</div>
 		<div class="gallery-item">
 			<A  id="3" class="gallery-image" HREF=""  target="_blank">
@@ -352,11 +349,14 @@ img {height: auto; max-height: 100px;}
 	"Demand has been tremendous","Volume is the number of shares of a security traded during a given period of time","each stratum should be large enough","it is more prone",
 	"leisure industry","scramble to find","shoplifter","surging demand","the survey results would be significantly biased","unemployment aid","mimicking"
 	]
+
+	document.getElementById("ff"+1).href = image1+k1[0]+image2;
+
 	k1.forEach(function (value, kk) {
 		console.log(kk,value)
 	document.getElementById(kk+1).innerHTML= value;
 	document.getElementById(kk+1).href = google+value;
-	document.getElementById("i"+(kk+1)).href = google+value;
+	//document.getElementById((kk+2)).href = image1+value+image2;
 	document.getElementById(kk+1).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
 	});
 </script>
