@@ -106,6 +106,8 @@ function data_to_html_dom(data){
 	const image2="&sxsrf=AOaemvIwPQtnWjarvK4_0trmH3lhRYIw7A:1637760978159&source=lnms&tbm=isch&sa=X&ved"
 
 	var  aa = document.getElementById("gallery1");
+
+
 	
 	k1.forEach(function (value, kk) {
 
@@ -123,10 +125,23 @@ function data_to_html_dom(data){
 	});
 
 	k1.forEach(function (value, kk) {
+
+	var rgb = ['255', '0', '0'];
+	rgb[0] = Math.round(Math.random() * 255);
+  	rgb[1] = Math.round(Math.random() * 255);
+  	rgb[2] = Math.round(Math.random() * 255);
+
+	const brightness = Math.round(((parseInt(rgb[0]) * 299) +
+                      (parseInt(rgb[1]) * 587) +
+                      (parseInt(rgb[2]) * 114)) / 1000);
+	const textColour = (brightness > 125) ? 'black' : 'white';
+  	const backgroundColour = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+
 	document.getElementById(kk).innerHTML= value;
 	document.getElementById(kk).href = google+value;
 	document.getElementById("ff"+kk).href = image1+value+image2;
-	document.getElementById(kk).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
+	document.getElementById(kk).style.backgroundColor = backgroundColour;
+	document.getElementById(kk).style.color = textColour;
 	});
 
 }
