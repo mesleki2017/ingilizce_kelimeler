@@ -62,6 +62,7 @@ body {
 	color: blue;
 	text-align: center;
 	font-size:500%;
+	
 }
 
 .gallery-image:hover {
@@ -77,9 +78,10 @@ img {height: auto; max-height: 100px;}
 	<div class="gallery">
 
 		<div class="gallery-item">
-			<A  id="1" class="gallery-image" HREF="" target="_blank">
-			<img  src="">
-			xxxxxxx</A>
+			<A  id="i1" class="gallery-image" HREF="" target="_blank">google image</A>
+			
+			<A  id="i2" class="gallery-image" HREF="" target="_blank">google image</A>
+			
 		</div>
 
 		<div class="gallery-item">
@@ -342,16 +344,19 @@ img {height: auto; max-height: 100px;}
 
 <script>
 	const google="https://translate.google.com/?hl=tr&sl=en&tl=tr&text="
+	const image1="https://www.google.com/search?q="
+	const image2="&sxsrf=AOaemvIwPQtnWjarvK4_0trmH3lhRYIw7A:1637760978159&source=lnms&tbm=isch&sa=X&ved"
 	var k1=["account","aggregate","caveat","comprehensive","concise","deceptive","depiction",
 	"fraudulent","galloping","implicit","lenient","merge","mutable","mutual consent","soar",
 	"Tear down","tenured","main clusters","stratified sampling based on the income category",
 	"Demand has been tremendous","Volume is the number of shares of a security traded during a given period of time","each stratum should be large enough","it is more prone",
 	"leisure industry","scramble to find","shoplifter","surging demand","the survey results would be significantly biased","unemployment aid","mimicking"
 	]
-	k1.forEach(function (value, i) {
-		console.log(i,value)
-	document.getElementById(i+1).innerHTML= value;
-	document.getElementById(i+1).href = google+value;
-	document.getElementById(i+1).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
+	k1.forEach(function (value, kk) {
+		console.log(kk,value)
+	document.getElementById(kk+1).innerHTML= value;
+	document.getElementById(kk+1).href = google+value;
+	document.getElementById("i"+(kk+1)).href = google+value;
+	document.getElementById(kk+1).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
 	});
 </script>
