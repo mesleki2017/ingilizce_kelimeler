@@ -72,8 +72,6 @@ img {height: auto; max-height: 100px;}
 </style>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
 </head>
 <body >
 <div class="container">
@@ -87,6 +85,7 @@ img {height: auto; max-height: 100px;}
 </div>
 
 <script>
+// jquery is used for only reading json file
 $(document).ready(function(){
 		
 var jqxhr = $.getJSON( "https://raw.githubusercontent.com/mesleki2017/ingilizce_kelimeler/master/list3.json", function(result) {
@@ -102,25 +101,17 @@ function data_to_html_dom(data){
 	var k1=data["kelime"]
 	console.log(k1)
 
-	//var mydata = JSON.parse(liste22);
 	const google="https://translate.google.com/?hl=tr&sl=en&tl=tr&text="
 	const image1="https://www.google.com/search?q="
 	const image2="&sxsrf=AOaemvIwPQtnWjarvK4_0trmH3lhRYIw7A:1637760978159&source=lnms&tbm=isch&sa=X&ved"
 
-
-
-	//document.getElementById("ff"+1).href = image1+k1[0]+image2;
 	var  aa = document.getElementById("gallery1");
-
-		
+	
 	k1.forEach(function (value, kk) {
 
 		var newDiv = document.createElement("div");
-		//newDiv.id=kk+1;
 		newDiv.className = 'gallery-item';
-		//var newContent = document.createTextNode("Hi there and greetings!");
 		var txt1="<A ";
-		
 		var txt2="id="+kk;
 		var txt3=' class="gallery-image" HREF="" target="_blank">aaadfd</A>';
 		var txt4=' <span><A  ';  
@@ -129,16 +120,15 @@ function data_to_html_dom(data){
 		var txt7=txt4+txt5+txt6+txt1+txt2+txt3;
 		newDiv.innerHTML = txt7;
 		aa.appendChild(newDiv);
-		
-
 	});
-	k1.forEach(function (value, kk) {
 
+	k1.forEach(function (value, kk) {
 	document.getElementById(kk).innerHTML= value;
 	document.getElementById(kk).href = google+value;
 	document.getElementById("ff"+kk).href = image1+value+image2;
 	document.getElementById(kk).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
 	});
+
 }
 
 })
