@@ -70,7 +70,12 @@ body {
 }
 img {height: auto; max-height: 100px;}
 </style>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
+</head>
+<body >
 <div class="container">
 
 	<h1 class="heading">İngilizce Kelimler</h1>
@@ -78,11 +83,25 @@ img {height: auto; max-height: 100px;}
 	<div id="gallery1" class="gallery">
 
 	</div>
-
+</body>
 </div>
-<script type="text/javascript" src="list22.json"></script>
+
 <script>
-	//var obj = list22.json;
+	//$(document).ready(function(){})
+		
+var jqxhr = $.getJSON( "https://raw.githubusercontent.com/mesleki2017/ingilizce_kelimeler/392a9be91e2b834dad60a312931ded17c242b897/list22.json", function(result) {
+  console.log( "success" );
+  //console.log(result);
+
+  aaa(result)
+})
+
+
+function aaa(data){
+	
+	console.log(data)
+
+	//var mydata = JSON.parse(liste22);
 	const google="https://translate.google.com/?hl=tr&sl=en&tl=tr&text="
 	const image1="https://www.google.com/search?q="
 	const image2="&sxsrf=AOaemvIwPQtnWjarvK4_0trmH3lhRYIw7A:1637760978159&source=lnms&tbm=isch&sa=X&ved"
@@ -123,6 +142,6 @@ img {height: auto; max-height: 100px;}
 	document.getElementById("ff"+kk).href = image1+value+image2;
 	document.getElementById(kk).style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16);
 	});
-
+}
 
 </script>
