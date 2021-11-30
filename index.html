@@ -12,11 +12,7 @@
 
 body {
 	min-height: 100vh;
-
 	background-image: radial-gradient(#275fda, #b9e0f1);
-	
-
-	
 }
 
 .container {
@@ -79,10 +75,12 @@ body {
 	padding-top: 10px;
 
 }
-span {font-size: 2rem;}
+span {font-size: 3rem;padding-left: 10px;}
 
+@media (hover: hover) {
 .gallery-image:hover {
-	transform: scale(1.15);
+	transform: scale(1.1);
+}
 }
 img {height: auto; max-height: 100px;}
 </style>
@@ -117,6 +115,7 @@ function data_to_html_dom(data){
 	var k1=data["kelime"]
 	console.log(k1)
 
+	const science="https://www.sciencedaily.com/search/?keyword=merge#gsc.tab=0&gsc.q="
 	const google="https://translate.google.com/?hl=tr&sl=en&tl=tr&text="
 	const image1="https://www.google.com/search?q="
 	const image2="&sxsrf=AOaemvIwPQtnWjarvK4_0trmH3lhRYIw7A:1637760978159&source=lnms&tbm=isch&sa=X&ved"
@@ -127,13 +126,20 @@ function data_to_html_dom(data){
 
 		var newDiv = document.createElement("div");
 		newDiv.className = 'gallery-item';
-		var txt1="<A ";
-		var txt2="id="+kk;
-		var txt3=' class="gallery-image" HREF="" target="_blank">aaadfd</A>';
+
 		var txt4=' <span><A  ';  
 		var txt5="id=ff"+kk;
 		var txt6='  HREF="" target="_blank">image</A></span>';
-		var txt7=txt4+txt5+txt6+txt1+txt2+txt3;
+
+		var txt44=' <span><A  ';  
+		var txt55="id=zz"+kk;
+		var txt66='  HREF="" target="_blank">science</A></span>';
+
+		var txt1="<A ";
+		var txt2="id="+kk;
+		var txt3=' class="gallery-image" HREF="" target="_blank">aaadfd</A>';
+
+		var txt7=txt4+txt5+txt6+txt44+txt55+txt66+txt1+txt2+txt3;
 		newDiv.innerHTML = txt7;
 		aa.appendChild(newDiv);
 	});
@@ -159,6 +165,7 @@ function data_to_html_dom(data){
 	document.getElementById(kk).innerHTML= value;
 	document.getElementById(kk).href = google+value;
 	document.getElementById("ff"+kk).href = image1+value+image2;
+	document.getElementById("zz"+kk).href = science+value;
 	document.getElementById(kk).style.backgroundColor = rgb[1];
 	document.getElementById(kk).style.color = rgb[0];
 	});
