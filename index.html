@@ -121,6 +121,7 @@ function data_to_html_dom(data){
 
 	const science="https://www.sciencedaily.com/search/?keyword=merge#gsc.tab=0&gsc.q=";
 	const thesaurus="https://www.thesaurus.com/browse/";
+	const latime="https://www.latimes.com/search?q=";
 	const google="https://translate.google.com/?hl=tr&sl=en&tl=tr&text=";
 	const image1="https://www.google.com/search?q=";
 	const image2="&sxsrf=AOaemvIwPQtnWjarvK4_0trmH3lhRYIw7A:1637760978159&source=lnms&tbm=isch&sa=X&ved";
@@ -144,11 +145,15 @@ function data_to_html_dom(data){
 		var txt555="id=tt"+kk;
 		var txt666='  HREF="" target="_blank">thesaurus</A></span>';
 
+		var txt4444=' <span><A  ';  
+		var txt5555="id=ss"+kk;
+		var txt6666='  HREF="" target="_blank">latimes</A></span>';
+
 		var txt1="<A ";
 		var txt2="id="+kk;
 		var txt3=' class="gallery-image" HREF="" target="_blank">aaadfd</A>';
 
-		var txt7=txt4+txt5+txt6+txt44+txt55+txt66+txt444+txt555+txt666+txt1+txt2+txt3;
+		var txt7=txt4+txt5+txt6+txt44+txt55+txt66+txt444+txt555+txt666+txt4444+txt5555+txt6666+txt1+txt2+txt3;
 		newDiv.innerHTML = txt7;
 		aa.appendChild(newDiv);
 	});
@@ -176,6 +181,7 @@ function data_to_html_dom(data){
 	document.getElementById("ff"+kk).href = image1+value+image2;
 	document.getElementById("zz"+kk).href = science+value;
 	document.getElementById("tt"+kk).href = thesaurus+value;
+	document.getElementById("ss"+kk).href = latime+value;
 	document.getElementById(kk).style.backgroundColor = rgb[1];
 	document.getElementById(kk).style.color = rgb[0];
 	});
